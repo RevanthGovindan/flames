@@ -18,10 +18,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  align-items: center;
 }
 
 .App-link {
@@ -35,4 +35,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+.width-ctrl{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.width-ctrl > input{
+  height: 30px;
+}
+
+.button-sub{
+  background: #484896;
+  height: 30px;
+  width: 40%;
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 6px;
+}
+
+.btn-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input1{
+  font-size: 25px;
+}
+
+.input2{
+  font-size: 25px;
 }
