@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+import { database } from "./firebaseConfig";
 import './App.css';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   }
 
   function checkNames() {
-    if(newName1 === "" || newName2 === ""){
+    if (newName1 === "" || newName2 === "") {
       alert("Please fill names");
       return;
     }
@@ -62,7 +62,12 @@ function App() {
         break;
       }
     }
-    setResult(flames[0])
+    setResult(flames[0]);
+    database.ref('users/' + newName1).set({
+      name1: newName1,
+      name2: newName2,
+      result : flames[0]
+    })
   }
 
   function onChangeName1(e) {
@@ -87,7 +92,7 @@ function App() {
           }} /><br />
           <div className="btn-center">
             <button className="button-sub" onClick={checkNames}>Find Relation</button>
-          </div><br/>
+          </div><br />
           {
             result
           }
