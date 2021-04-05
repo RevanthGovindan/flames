@@ -63,10 +63,12 @@ function App() {
       }
     }
     setResult(flames[0]);
-    database.ref('users/' + newName1).set({
+    database.ref('users/' + newName1 + "/" + newName2).set({
       name1: newName1,
       name2: newName2,
-      result : flames[0]
+      result: flames[0]
+    }).then(() => {
+      console.log("published");
     })
   }
 
